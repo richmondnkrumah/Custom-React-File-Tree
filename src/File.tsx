@@ -1,3 +1,4 @@
+//File.tsx
 type props = {
   name?: string
 }
