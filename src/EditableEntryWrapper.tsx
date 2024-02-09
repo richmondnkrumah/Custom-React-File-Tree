@@ -17,7 +17,7 @@ const EditableEntryWrapper: React.FC<EditableEntryWrapperProps> = ({
   const [isEditing, setIsEditing] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const {createNode} = useExplorerFileTree()
+  const {createNode,setNewNode} = useExplorerFileTree()
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -27,6 +27,7 @@ const EditableEntryWrapper: React.FC<EditableEntryWrapperProps> = ({
       setIsEditing(false);
       createNode(inputValue,isFolder)
       handleIsDone()
+      setNewNode()
     }
   };
   useEffect(() => {
