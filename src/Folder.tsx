@@ -1,3 +1,4 @@
+//Folder.tsx
 import { useExplorerFileTree } from "./store";
 type props = {
   name?: string;
