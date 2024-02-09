@@ -1,3 +1,4 @@
+//store.ts
 import { create } from "zustand";
 
 export type TFiles = {
@@ -19,6 +20,8 @@ interface TFilesStore {
     node?: TFiles,
     currentFolder?: string,
   ) => void;
+  newNode: boolean,
+  setNewNode: () => void
 }
 
 export const useExplorerFileTree = create<TFilesStore>()((set, get) => ({
@@ -52,6 +55,8 @@ export const useExplorerFileTree = create<TFilesStore>()((set, get) => ({
       },
     ],
   },
+  newNode: false,
+  setNewNode: () => set((state) => ({newNode: !state.newNode})),
   currentFolderNode: "root",
   createTreeNode: (name) =>
     set((state) => {
