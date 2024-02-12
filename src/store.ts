@@ -124,8 +124,6 @@ const utilCreateNode = (
   newNodeName: string,
   isFolder?: boolean
 ): TFiles => {
-  console.log(node.name,"node name")
-  console.log(currentFolder,"node currrnt folder")
   if (node.name === currentFolder) {
     if (node.isFolder) {
       if (!node.children) {
